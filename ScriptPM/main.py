@@ -36,8 +36,8 @@ def find_biggest_circle(frame):
     blurred = cv2.medianBlur(gray, 5)
     circles = cv2.HoughCircles(blurred, cv2.HOUGH_GRADIENT,
                                dp=1.2, minDist=100,
-                               param1=50, param2=38,
-                               minRadius=35, maxRadius=60)
+                               param1=50, param2=42,
+                               minRadius=25, maxRadius=40)
     if circles is not None:
         c = max(np.uint16(np.around(circles[0])), key=lambda x: x[2])
         return int(c[0]), int(c[1]), int(c[2])  # x, y, r
@@ -162,7 +162,7 @@ def run_exploration_mode():
             result = find_biggest_circle(f2)
             if result:
                 x, y, r = result
-                if r >= 38:
+                if r >= 25:
                     if last_circle:
                         d = np.hypot(x - last_circle[0], y - last_circle[1])
                         exploration_count = exploration_count + 1 if d < 10 else 1

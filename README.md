@@ -25,39 +25,18 @@ Acest proiect reprezintă un **Auto-Turret** controlat cu Arduino UNO și o apli
 - Bare-metal: `digitalWriteBare`, `analogReadBare` etc.
 
 ## 🔗 Link video demo
-▶️ [Demo pe YouTube](hhttps://youtu.be/r3NM0cNHf28)
+▶️ [Demo pe YouTube](https://youtu.be/r3NM0cNHf28)
 
 ## 📂 Structura fișierelor
 ```
 📁 Auto-Turret-System/
 ├── Arduino/src/                 # cod firmware pentru Arduino UNO
 │   └── main.cpp
-├── pc_control/              # script OpenCV + control UART
-│   └── turret.py
+├── ScriptPM/              # script OpenCV + control UART
+│   └── main.py
 ├── README.md
 └── Schema+Demo/                  # imagini + scheme electrice
-    └── autoturret-schema.png
 ```
-
-## ⚙️ Instrucțiuni de rulare
-
-### 1. Upload cod pe Arduino
-- Deschide folderul `arduino/` cu PlatformIO sau Arduino IDE.
-- Conectează placa Arduino UNO și flash-uiește sketch-ul.
-
-### 2. Rulează codul PC
-```bash
-cd pc_control/
-pip install -r requirements.txt
-python turret.py
-```
-
-> Asigură-te că portul `COM` din codul Python corespunde plăcii tale.
-
-### 3. Taste utile în timpul rulării:
-- `s` → începe modul scanare (automat)
-- `f` → revine în mod liber (FREE)
-- `q` → oprește complet
 
 ## 🤣 Notă amuzantă
 > Jumătate din problemele întâmpinate în proiect au fost rezolvate cu **bandă adezivă**.
